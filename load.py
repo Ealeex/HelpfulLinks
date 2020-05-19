@@ -126,7 +126,7 @@ def updateMainWindow():
 
 # Called when the plugin is started by EDMC
 def plugin_start(plugin_dir):
-    if not config.get('version') or config.get('version') == version: config.delete('prefs') 
+    if not config.get('version') or not config.get('version') == version: config.delete('prefs') 
     config.set('version',version)
     this.linkPreferences = json.loads(config.get('prefs') or json.dumps(initializeSettings()))
     this.linkLabels = list()
